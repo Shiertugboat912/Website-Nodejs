@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Testimonies
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet3.css">
+</head>
+
+
+<body>
+    <%- include('partials/header.ejs') %>
+    <br><br><br><br><br><br><br>
+    <div id="banner">
+        <h1>Testimonies</h1>
+    </div>
+    <div id="tes">
+        <%if(test.length)
+        {
+        for(var i =0;i < test.length; i++)
+        {%> <div class="each">
+            <img src="http://localhost:3000/images/testimonial_images/<%=test[i].IMG%>">
+            <div id="details">
+                <p>
+                    <strong>Name:</strong> <%=test[i].P_NAME%><br>
+                    <strong>Email:</strong> <%=test[i].P_EMAIL%><br>
+                    <strong>Designation:</strong> <%=test[i].POST%><br>
+
+                </p>
+            </div>
+            <div id="con">
+                <strong>Testimony:</strong>
+                <p><%=test[i].TEST%></p>
+            </div>
+        </div>
+        <br><br>
+        <%}
+    }else{%>
+        <p>No testimonies Yet Stay Tuned</p>
+        <%}%>
+        </div>
+        <%- include('partials/footer.ejs') %>
+</body>
+
+</html>
+
+<style>
+    #banner {
+        background-image: url(css/background.jpg);
+        background-size: cover;
+        padding: 30px;
+        text-align: center;
+        font-family: 'Archivo Black', sans-serif;
+    }
+
+    #details {
+        width: 500px;
+        transform: translate(150px, -220px);
+        padding-left: 20px;
+        padding-top: 30px;
+        line-height: 1.5;
+        position: absolute;
+       font-family: 'Raleway',sans-serif;
+    }
+
+    #details strong, #con strong
+    {
+        font-family: 'Archivo Black', sans-serif;
+        font-weight: 8px;
+
+    }
+
+    .each {
+        padding: 10px;
+        padding-top: 20px;
+        border: 10px ridge royalblue;
+        min-height: 300px;
+    }
+
+    #con {
+      
+        padding: 10px;
+        transform: translate(160px,-120px);
+        width: 900px;
+        font-family: 'Raleway',sans-serif;
+        line-height: 1.5;
+    }
+
+    #tes {
+        padding: 10 50 10 50;
+        min-height: 254px;
+    }
+
+    #tes img {
+        width: 150px;
+        height: 180px;
+        object-fit: cover;
+        border: 5px ridge burlywood;
+    }
+</style>

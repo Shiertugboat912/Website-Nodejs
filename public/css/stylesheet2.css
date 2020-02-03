@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Calistoga|Raleway|Kanit&display=swap');
+
+* {
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    animation-duration: 0.8s;
+    animation: fade;
+}
+
+@keyframes fade
+{
+    from{opacity: 0}
+    to {opacity: 1}
+}
+.alert-success
+{
+    height: 30px;
+    font-family: 'Raleway',sans-serif;
+    background: lightgreen;
+    color: darkgreen;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.alert-error
+{
+    height: 30px;
+    text-align: center;
+    font-family: 'Raleway',sans-serif;
+    background: rgba(216, 157, 177, 0.884);
+    color: red;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+#feedback {
+    text-align: center;
+    height: 500px;
+    animation: fade;
+    animation-duration: 0.8s;
+    padding-top:130px;
+}
+
+#feedback form {
+    border-right: 1px solid black;
+    padding-right: 30px;
+    width: 50%;
+    font-family: 'Archivo Black', sans-serif;
+    height: 400px;
+    transform: translate(50px);
+
+}
+
+#feedback form input {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-family: 'Raleway',sans-serif;
+    padding-left: 5px;
+    font-size: 16px;
+    width: 80%;
+}
+
+#feedback form textarea
+{
+    font-family: 'Raleway',sans-serif;    
+}
+
+#feedback form button
+{
+    color: white;
+    width: 100px;
+   background-color:dodgerblue;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#feedback img
+{
+    transform: translate(350px,-300px);
+}
+
+
+#submit
+{
+    border-radius: 10px;
+    border: none;
+    width:25%;
+    background-color: skyblue;
+    color:white;
+    height: 40px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#submit:hover
+{
+    color:blue;
+    background-color:white; 
+    border: 2px solid skyblue;
+    opacity: 0.8;
+    animation: submit 0.4s;
+}
+
+@keyframes submit
+{
+    from{transform:scale(1,1);}
+    to{transform: scale(1.5,1.5);}
+}
+

@@ -1,0 +1,53 @@
+<ul id="ff">
+    <%if(test.length >= 4 )
+    {
+    for(var i=0; i < 4 ; i++)
+    {%>
+    <li><a href='/testimonies'> <img class="grey" alt="<%=test[i].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[i].IMG%>">
+        </a>
+        <p><%=test[i].P_NAME%></p>
+    </li>
+    <%}
+    }else if(test.length == 3)
+    {%>
+    <li><a href='/testimonies'> <img class="grey" alt="<%=test[0].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[0].IMG%>">
+        </a><p><%=test[0].P_NAME%></p></li>
+    <li><a href='/testimonies'> <img class="grey" alt="<%=test[1].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[1].IMG%>">
+        </a><p><%=test[1].P_NAME%></p></li>
+    <li><a href='/testimonies'> <img class="grey"  alt="<%=test[2].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[2].IMG%>">
+        </a><p><%=test[2].P_NAME%></p></li>
+    <%}
+
+        else if (test.length == 2){%>
+    <li><a href='/testimonies'> <img class="grey"  alt="<%=test[0].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[0].IMG%>">
+        </a><p><%=test[0].P_NAME%></p></li>
+    <li><a href='/testimonies'> <img class="grey"  alt="<%=test[1].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[1].IMG%>">
+        </a><p><%=test[1].P_NAME%></p></li>
+
+    <%}
+        else if (test.length == 1){%>
+    <li><a href='/testimonies'> <img class="grey"  alt="<%=test[0].IMG%>" src="http://localhost:3000/images/testimonial_images/<%=test[0].IMG%>">
+        </a><p><%=test[0].P_NAME%></p></li>
+    <%}
+          else{%>
+    <li><a>No Testimonies Yet
+        </a></li>
+
+    <%}%>
+</ul>
+<script>
+    align()
+    function align()
+    {
+        var a = document.getElementsByClassName('grey');
+        var b = document.getElementById('ff')
+        if(a.length == 1 || a.length == 0)
+        b.style.marginLeft = '500px';
+        else if (a.length == 2)
+        b.style.marginLeft = '400px';
+        else if(a.length == 3)
+        b.style.marginLeft = '300px';
+        else if(a.length == 4)
+        b.style.marginLeft = '200px';
+    }
+</script>

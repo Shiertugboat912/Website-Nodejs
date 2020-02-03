@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Login
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet3.css">
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+    <br><br>
+
+    <div id="login">
+        <form method="post" action="/login">
+            <br><br>
+            <label>Admin Login</label>
+            <br><br>
+            <% if(error.length){%>
+                <div class="alert-error"><%=error%></div>
+            <%}%>
+            <br>
+            <input type="text" placeholder="Username" name="username" required><br><br>
+            <input type="password" placeholder="Password" name="password" required><br><br><br>
+
+            <button type="submit" id="submit">Login</button>
+            <br><br>
+        </form>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+<style>
+    .alert-error
+        {
+            height: 30px;
+            text-align: center;
+            font-family: 'Raleway',sans-serif;
+            background: rgba(216, 157, 177, 0.884);
+            color: red;
+            border-radius: 10px;
+            padding: 5px;
+        }
+</style>
+</html>

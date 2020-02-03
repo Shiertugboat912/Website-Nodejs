@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Calistoga|Days+One|Kanit|Raleway|Rye&display=swap');
+
+
+*{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    animation: fade;
+    animation-duration: 0.8s;
+    height: auto;
+}
+
+@keyframes fade
+{
+    from{opacity: 0}
+    to {opacity: 1}
+}
+
+
+#header {
+    background-image: url(background.jpg);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    text-align: left;
+    height: 100px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#header img {
+    width: 100px;
+    transform: translate(380px,-100px);
+
+}
+
+#header h1 {
+    transform: translate(0px, 20px);
+    font-family: 'Calistoga', 'cursive';
+    font-size: 40px;
+    color:white;
+    margin-left: 500px;
+}
+
+#header p {
+    font-family: 'Raleway', sans-serif;
+    color: yellow;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 500px;
+}
+#navbar {
+    height: 100%;
+    width: 200px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 5px;
+    text-align: left;
+    border:none;
+    box-shadow: 5px 5px  10px grey;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+#navbar ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+    
+}
+
+#navbar li
+{
+    float: center;
+    margin: 5px;
+    
+}
+
+a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+
+#navbar a:hover {
+    border-bottom: 2px solid black;
+    color: darkcyan;
+
+}
+#all
+{
+    width: 100%;
+    height: auto;
+    transform: translate(300px,-550px);
+}
+#notice,#activ,#photo,#feedback,#car,#testimonials
+{
+    width: 900px;
+    height: auto;
+    border:none;
+    box-shadow: 5px 5px  10px grey;
+    position: absolute;
+}
+#feedback
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+
+

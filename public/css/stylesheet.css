@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Calistoga|Days+One|Kanit|Raleway|Rye&display=swap');
+
+
+*{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    animation: fade;
+    animation-duration: 0.8s;
+    /* -ms-overflow-style: none; */
+}
+/* *::-webkit-scrollbar {
+    display: none;
+  } */
+
+body
+{
+    margin:0;
+    padding: 0;
+}
+
+@keyframes fade
+{
+    from{opacity: 0}
+    to {opacity: 1}
+}
+#photos
+{
+    height: 600px;
+    padding-top: 130px ;
+    overflow: hidden;
+}
+
+
+#about {
+    height: 200px;
+    background-color: royalblue;
+    color: white;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    text-align: center;
+    transition: 1s ease-in;
+    overflow: hidden;
+}
+
+#vision
+{
+    transform: translate(-10px);
+    border-right: 1px solid white;
+    padding-top:30px;
+    height:200px;
+    width:50%;
+     
+}
+
+#vision h1 , #motto h1
+{
+   font-family: 'Rye','cursive';
+    font-size: 50px;  
+}
+
+#vision p, #motto p
+{
+    font-family: 'Days One',sans-serif;
+    font-size: 20px;
+}
+
+#motto
+{
+    transform: translate(700px,-202px);
+    height:200px;
+    width:50%;
+}
+#news
+{
+    height:300px;
+    text-align: left;
+    padding-top:30px;
+    padding-left: 30px;
+    transition: 1s ease-in;
+}
+
+#news form
+{
+    border-right: 2px solid black;
+    width: 25%;
+    height: 80%;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+}
+#news form p
+{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+#news-cards
+{
+    width: 840px;
+    height: 300px;
+    padding-top: 30px;
+    transform: translate(340px,-250px);
+    list-style-type: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+#news-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+#news-cards {
+  -ms-overflow-style: none;
+}
+
+#news-cards p{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}
+
+.box
+{
+    width: 200px;
+    height: 220px;
+    margin-left: 45px;
+    background-color:white;
+    white-space: normal;
+    padding:20px;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 20px;
+    box-shadow: 5px 5px 10px grey ;
+
+}
+
+.box:hover
+{
+    transition: 0.2s linear;
+    transform: scale(1.1,1.1);
+}
+
+hr{
+    width:40%;
+    transform: translate(430px);
+    border : 0;
+    height: 2px; 
+    background-image: linear-gradient(to right, blue, white,blue); 
+    border-radius: 20px;
+}
+
+#testimonials
+{
+    height: 330px;
+    text-align: center;
+    transition: 1s ease-in;
+}
+
+#testimonials h1
+{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+}
+
+#testimonials p
+{
+   font-family: 'Raleway', sans-serif;
+  font-size: 15px;  
+}
+
+#testimonials ul
+{
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+#testimonials li
+{
+    float: left;
+    height: 190px;
+    width: 170px;
+    margin:20px;
+    border: 2px solid blue;
+}
+#testimonials li p
+{
+    transform: translate(0px,-17px);
+    background: rgb(0,0,0,0.5);
+    color:white;
+    display: none;
+}
+
+#testimonials li:hover p
+{
+    display: block;
+}
+#testimonials img
+{
+    width: 170;
+    height: 190;
+   object-fit: cover;
+   text-align: center;
+   filter: grayscale(100%);
+}
+
+#testimonials li:hover .grey
+{
+    transition-duration: 1s;
+    filter: grayscale(0%);
+}
+
+
+

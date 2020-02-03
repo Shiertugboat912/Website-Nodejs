@@ -1,0 +1,119 @@
+<div id="navbar">
+    <div id="header">
+        <h1>FELLOWSHIP SCHOOL</h1><br>
+        <p>Fellowship School, August Kranti Marg,<br> Mumbai - 400036.
+        </p>
+        <img src="images/logo.webp">
+    </div>
+    <ul>
+        <li class="dd"><a href="/login"><%=name%></a></li>
+        <li class="dd"><a href="/feedback">Feedback</a></li>
+        <li class="dd"><a href="/activity">Events</a></li>
+        <li class="dd"><a href="/gallery">Gallery</a></li>
+        <li class="dd"><a href="/about-us">About us</a></li>
+        <li class="dd"><a href="/homepage#news">News</a></li>
+        <li class="dd"><a href="/homepage">Home</a></li>
+    </ul>
+</div>
+
+
+<style>
+    #header {
+        text-align: left;
+        padding: 20px 0px 20px 130px;
+        width: 500px;
+        position: absolute;
+        height: 80px;
+        transition: 0.5s ease-in;
+        transform-origin: 0% 0%;
+    }
+
+    #header img {
+        width: 100px;
+        transform: translate(-120px, -110px);
+
+    }
+
+    #header h1 {
+        font-family: 'Calistoga', 'cursive';
+        font-size: 30px;
+        color: black;
+    }
+
+    #header p {
+        font-family: 'Raleway', sans-serif;
+        color: royalblue;
+        font-size: 15px;
+        font-weight: bold;
+        ;
+    }
+
+    #navbar {
+        width: 100%;
+        position: fixed;
+        height: 130px;
+        padding-right: 5px;
+        text-align: left;
+        background: white;
+
+        z-index: 10;
+        transition: 0.5s ease-in;
+        border-bottom: 10px solid royalblue;
+    }
+
+    #navbar ul {
+        list-style-type: none;
+        text-align: left;
+        margin: 0;
+        padding-right: 10px;
+
+    }
+
+    #navbar li {
+        float: right;
+        margin: 5px;
+        position: relative;
+        padding-top: 50px;
+        transition: 0.5s ease-in;
+
+    }
+
+    #navbar a {
+
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'Kanit', sans-serif;
+    }
+
+
+    #navbar a:hover {
+        color: blue;
+    }
+</style>
+
+<script>
+    window.addEventListener("scroll", function () {
+        var top = document.getElementById('navbar');
+        var a = document.getElementById('header');
+        var b = document.getElementsByClassName('dd');
+        var ypos = window.pageYOffset;
+        if (ypos > 100) {
+            top.style.opacity = "0.5";
+            a.style.transform = 'scale(.7)';
+            top.style.height = '90px';
+            for (var i = 0; i < b.length; i++)
+                b[i].style.padding = "20px 0px 0px 0px";
+        }
+        else {
+            top.style.opacity = "1";
+            a.style.transform = 'scale(1)';
+            top.style.height = '130px'
+            for (var i = 0; i < b.length; i++)
+                b[i].style.padding = "50px 0px 0px 0px";
+        }
+    });
+</script>

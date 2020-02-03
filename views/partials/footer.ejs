@@ -1,0 +1,67 @@
+<div id="contact">
+    <div id="map">
+       <strong ><p>On the Map</p></strong><br>
+        <div id="googleMap" style="width:300px;height:150px;"></div>
+    </div>
+    <br>
+    <div id="det">
+        <p style="font-size: 16px;">Contact Info</p><br>
+       <strong> <p>Fellowship School</strong>,<br>August Kranti Marg,<br>Gowalia Tank,<br>Mumbai,<br> Maharashtra 400036<br>
+            Email:<br>
+            Phone:<br>
+        </p>
+    </div>
+</div>
+<footer>
+    <p>Copyright © 2019-20 Fellowship School, August Kranti Marg. | All rights reserved. </p>
+</footer>
+
+<style>
+    #contact {
+        background: steelblue;
+        height: 300px;
+        padding-left: 50px;
+        padding-top: 10px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 14px;
+        color: white;
+    }
+
+    #det {
+        margin-left: 700px;
+        transform: translate(0px, -150px);
+    }
+
+    #map {
+        margin-left: 150px;
+        transform: translate(0px, 50px);
+    }
+
+
+    footer {
+        color: white;
+        background-color: #17202a;
+        text-align: left;
+        padding: 20px 0px 20px 30px;
+        font-weight: 5px;
+        font-size: 15px;
+        bottom: 0;
+    }
+</style>
+<script>
+    function myMap() {
+        var mapProp = {
+            center: new google.maps.LatLng(18.9617132, 72.8109928),
+            zoom: 17,
+        };
+
+        var myCenter = new google.maps.LatLng(18.9617132, 72.8109928)
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({ position: myCenter });
+        marker.setMap(map);
+
+    }
+</script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4t5rzWW8jbSp5RG8nwKLwW7GICssed9o&callback=myMap"></script>

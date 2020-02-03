@@ -1,0 +1,124 @@
+<html>
+
+<head>
+  <title>Activities
+  </title>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet3.css">
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+  <% var primary = [];
+  var secondary =[];
+  if(data.length){
+    var j = 0;
+    var k = 0; 
+    for (var i = 0; i < data.length;i++)
+    {
+      if(data[i].Section == 'Primary')
+      {
+        primary[j] = data[i];
+        j++;
+      }
+      else
+      {
+        secondary[k] = data[i];
+        k++;
+      }
+    }
+  }
+    %>
+
+  <br><br><br><br><br><br><br>
+  <div id="banner">
+    <h1>Events</h1>
+  </div>
+  <br>
+  <div id="Psection">
+    <h1>Primary Section:
+    </h1>
+
+
+    <% if(primary.length){
+      for(var i = 0;i < primary.length;i++) { %>
+    <br>
+    <form>
+      <h2><%=primary[i].Acti_name%></h2>
+      <p>Date: <%=primary[i].Acti_date%> <br> Time: <%=primary[i].time%> <br> Standard: <%=primary[i].Std%><br> Venue:
+        <%=primary[i].Venue%></p><br>
+        <img style="height: 200px;object-fit: cover;"
+        src="http://localhost:3000/images/event_images/<%=primary[i].event_img%>"><br><br>
+        <p style="text-align: justify;"><%=primary[i].event_des%></p>
+    </form>
+    <% }
+    }else{ %>
+    <tr>
+      <td colspan="5">No Events</td>
+    </tr>
+    <% } %>
+  </div>
+  <div id="Ssection">
+    <br>
+    <hr>
+    <h1>Secondary Section:
+    </h1>
+    <% if(secondary.length){
+      for(var i = 0;i < secondary.length;i++) { %>
+    <br>
+    <form>
+      <h2><%=secondary[i].Acti_name%></h2>
+      <p>Date: <%=secondary[i].Acti_date%> <br> Time: <%=secondary[i].time%> <br> Standard: <%=secondary[i].Std%><br>
+        Venue:
+        <%=secondary[i].Venue%></p><br>
+        <img style="height: 200px;object-fit: cover;"
+        src="http://localhost:3000/images/event_images/<%=secondary[i].event_img%>"><br><br>
+        <p style="text-align: justify;"><%=secondary[i].event_des%></p>
+    </form>
+    <% }
+    }else{ %>
+    <tr>
+      <td colspan="5">No Events</td>
+    </tr>
+    <% } %>
+  </div>
+  <br>
+  <%- include('partials/footer.ejs') %>
+  <script type="text/javascript" src="js/feed.js"></script>
+</body>
+
+</html>
+
+<style>
+  #banner {
+    background-image: url(css/background.jpg);
+    background-size: cover;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  form {
+    padding: 5 20 10 20;
+    width: 80%;
+    font-family: 'Archivo Black', sans-serif;
+    height: auto;
+    font-size: 13px;
+    transform: translate(120px, 0px);
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  div {
+    padding-left: 10px;
+  }
+
+  form p {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  h1
+  {
+    font-family: 'Archivo Black', sans-serif;
+
+  }
+</style>

@@ -1,0 +1,49 @@
+<head>
+    <title>ViewImage</title>
+</head>
+
+<body>
+    <div onclick="invisible()">
+        <img src='http://localhost:3000/images/upload_images/<%=img%>'>
+        <p id="no"><%=des%></p>
+    </div>
+</body>
+
+<style>
+   div {
+        width: 100%;
+        height: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    img {
+        width: 800px;
+        height: 500px;
+        object-fit:cover;
+    }
+
+    p {
+        width:800px;
+        position: absolute;
+        bottom:21;
+        color:white;
+        background: rgb(0,0,0,0.5);
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        line-height: 1.5;
+        left:214px;
+    }
+
+</style>
+
+<script>
+    function invisible()
+    {
+        var a = document.getElementById('no')
+        if(a.style.visibility == 'visible')
+        a.style.visibility = 'hidden';
+        else
+        a.style.visibility ='visible'
+    }
+</script>

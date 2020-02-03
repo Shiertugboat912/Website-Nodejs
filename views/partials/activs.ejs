@@ -1,0 +1,80 @@
+<form method="POST" action="admin/activities" enctype="multipart/form-data">
+    <h1>Enter New Event </h1>
+    <br>
+    <input type="text" placeholder="name of Event" name="title" required><br><br>
+    <input type="date" name="date" required><br><br>
+    <select name="standard">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br><br>
+    <input type="time" name="time" required><br><br>
+    <input type="text" name="ven" placeholder="Venue" required><br><br>
+    <select name="section">
+        <option value="Primary">Primary</option>
+        <option value="Secondary">Secondary</option>
+    </select><br><br>
+    <label>Event Photo</label><br>
+    <input type="file" name="event_image" accept="image/png, image/jpeg" required><br><br>
+    <textarea name="event_des" placeholder="Enter event description" cols="55" rows="10"></textarea><br><br>
+    <button clas="submit">Upload</button>
+    <br><br>
+    <hr>
+    <br>
+</form>
+<div id="showact">
+<table id="ll">
+    <tr>
+        <th>SRno</th>
+        <th>Event Name</th>
+    </tr>
+    <% if(event.length){ 
+                              for(var i = 0;i < event.length;i++) { %>
+    <tr>
+        <td><%=(i+1)%></td>
+        <td><%=event[i].Acti_name%></td>
+    </tr>
+    <% }
+                            }else{ %>
+    <tr>
+        <td colspan="2">No event</td>
+    </tr>
+    <% } %>
+</table>
+</div>
+<form method="POST" action="admin/deleteactivity">
+    <h1>Delete Event </h1>
+    <input type="text" placeholder="name of Event to Delete" name="del" required><br><br>
+    <button class="submit">Delete</button>
+</form>
+<style>
+    #ll {
+        border: 2px solid blue;
+        width: 300px;
+        text-align: center;
+        box-shadow: 5px 5px 10px grey;
+    }
+    form select {
+        border: 1px solid grey;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        padding-left: 5px;
+        font-size: 16px;
+        width: 80%;
+    }
+    #showact
+    {
+        position: absolute;
+        transform: translate(400px,-650px);
+    }
+</style>

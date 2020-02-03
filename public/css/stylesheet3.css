@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Calistoga|Days+One|Kanit|Raleway|Rye&display=swap');
+
+
+*{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    animation: fade;
+    animation-duration: 0.8s;
+
+}
+
+@keyframes fade
+{
+    from{opacity: 0}
+    to {opacity: 1}
+}
+
+
+/*login page css*/
+
+#login {
+    text-align: center;
+    height: 400px;
+    animation: fade;
+    animation-duration: 0.8s;
+    padding-top: 150px;
+    }
+
+#login form {
+    border: none;
+    box-shadow: 5px 5px 10px grey ;
+    border-radius: 10px;
+    width: 45%;
+    height: auto;
+    transform: translate(330px);
+}
+
+#login form label
+{
+    font-size: 30px;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+
+#login form input {
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: transparent;
+    height: 40px;
+    font-family: 'Raleway',sans-serif;
+    color: black;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 50%;
+}
+
+#login form button
+{
+    color: white;
+    width: 100px;
+   background-color:dodgerblue;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#submit
+{
+    border-radius: 10px;
+    border: none;
+    width:25%;
+    background-color: skyblue;
+    color:white;
+    height: 40px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#submit:hover
+{
+    color:blue;
+    background-color:white; 
+    border: 2px solid skyblue;
+    opacity: 0.8;
+    animation: submit 0.4s;
+}
+
+@keyframes submit
+{
+    from{transform:scale(1,1);}
+    to{transform: scale(1.5,1.5);}
+}
+
+

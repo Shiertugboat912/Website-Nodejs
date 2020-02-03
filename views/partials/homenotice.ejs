@@ -1,0 +1,23 @@
+<div id="news">
+    <form>
+        <h2>Notices</h2><br>
+        <p>These Are The Latest<br> Notices</p>
+    </form>
+    <div id="news-cards">
+        <% if(news.length){ 
+                for(var i = 0;i < news.length;i++) { %>
+        <a href="http://localhost:3000/notices/<%=news[i].pdf%>"><label class="box"><img><br>
+                <h4><%= news[i].Title%></h4><br>
+                <p><%= news[i].des%></p>
+            </label></a>
+        <% }
+              }else{ %>
+        <a><label class="box"><img><br>No Notices</label></a>
+        <% } %>
+    </div>
+</div>
+<style>
+    h4 {
+        font-family: 'Archivo Black', sans-serif;
+    }
+</style>

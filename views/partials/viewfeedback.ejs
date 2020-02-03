@@ -1,0 +1,62 @@
+<h1 id="kk">Feedbacks Given </h1><br>
+<table>
+    <tr>
+        <th>Srno</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>feedback</th>
+    </tr>
+    <% if(fed.length){ 
+                  for(var i = 0;i < fed.length;i++) { %>
+    <tr>
+        <td><%=(i+1)%></td>
+        <td><%=fed[i].ID%></td>
+        <td><%=fed[i].P_name%></td>
+        <td><%=fed[i].email%></td>
+        <td><%=fed[i].mob%></td>
+        <td><%=fed[i].feed%></td>
+    </tr>
+    <% }
+    }else{ %>
+    <tr>
+        <td colspan="5">No Feedback</td>
+    </tr>
+    <% } %>
+</table>
+<br><br>
+<hr style="width: 700px; transform: translate(120px);">
+<br><br>
+<form method="POST" action="admin/deletefeedback">
+    <h1>Delete Feedback </h1>
+    <input type="number" placeholder="Id of Feedback to delete" name="delfeed" required><br><br>
+    <button class="submit">Delete</button>
+</form>
+
+<style>
+    table {
+        border: 2px solid skyblue;
+        width: 700px;
+        text-align: center;
+        transform: translate(120px);
+        box-shadow: 5px 5px 10px grey;
+    }
+
+    td,
+    th {
+        height: 50px;
+        border: 2px solid skyblue;
+        font-family: 'Raleway', sans-serif;
+        width: auto;
+        padding: none;
+        min-width: 50px;
+    }
+
+    #kk {
+
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 25px;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,140 @@
+<div class="slideshow-container">
+  <% if (img.length){
+    for(var i =0 ; i < img.length ; i++ )
+    {%>
+  <div class="mySlides fade">
+    <img alt="<%=img[i].img_name%>"
+      src="http://localhost:3000/images/car_images/<%=img[i].CAR_IMAGE%>">
+  </div>
+  <% }
+ } else { %>
+  <p>no photos</p>
+  <% } %>
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+<div style="text-align:center">
+<% for(var i = 0; i < img.length;i++) 
+{%>
+  <span class="dot"></span>
+<%}%>
+</div>
+
+<style>
+  .mySlides {
+    display: none;
+    height: inherit;
+  }
+
+  .mySlides img {
+    vertical-align: middle;
+    height: inherit;
+    object-fit: cover;
+    width:100%;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    height: 600px;
+    position: relative;
+    margin: 0;
+    background-attachment: fixed;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    transform: translate(0px, -40px);
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+/*for dropdown
+
+down arrow = &#9662;
+ <ul class="dropdown">
+                <li><a href="/about-us">Management</a></li>
+            </ul>
+ul li ul.dropdown{
+        transform: translate(0px,6px);
+        min-width: 100%; 
+        background: white;
+        text-align: center;
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+    ul li:hover ul.dropdown{
+        display: block;	
+        border-top: 2px solid blue;
+    }
+    ul li ul.dropdown li{
+        display: block;
+    }*/
+</style>
+

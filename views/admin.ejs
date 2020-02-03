@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <title>admin
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheetadmin.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1>FELLOWSHIP SCHOOL</h1>
+        <br>
+        <p>Fellowship School, August Kranti Marg, Mumbai - 400036.
+        </p>
+        <img src="images/logo.webp">
+    </div>
+    <div id="navbar">
+        <ul>
+            <li><a href="/logout" onclick="doLogout()">Logut</a></li>
+            <li><a href="#" onclick="show(6)">Testimonials</a></li>
+            <li><a href="#" onclick="show(4)">Photos</a></li>
+            <li><a href="#" onclick="show(5)">Carousel Photo</a></li>
+            <li><a href="#" onclick="show(1)">Notices</a></li>
+            <li><a href="#" onclick="show(3)">Events</a></li>
+            <li><a href="#" onclick="show(2)">View Feedback</a></li>
+            <li><a href="/homepage">Homepage</a></li>
+        </ul>
+    </div>
+    <div id="all">
+            
+        <% if(success.length){%>
+            <div class="alert-success"><%=success%></div>
+        <%}%>
+        <% if(error.length){%>
+            <div class="alert-error"><%=error%></div>
+        <%}%>
+
+        <div id="notice" style="display:block;">
+            <%- include('partials/notices.ejs') %>
+        </div>
+        <div id="feedback" style="display:none;">
+            <%- include('partials/viewfeedback.ejs') %>
+        </div>
+        <div id="activ" style="display:none;">
+            <%- include('partials/activs.ejs') %>
+        </div>
+        <div id="testimonials" style="display: none;">
+                <%- include('partials/testimonials.ejs') %>
+            </div>
+        <div id="car" style="display:none;">
+            <%- include('partials/carupload.ejs') %>
+        </div>
+        <div id="photo" style="display:none;">
+            <%- include('partials/uploadphotos.ejs') %>
+        </div>
+    </div>
+    <script>
+        function doLogout() {
+            window.location.replace('/login');
+        }
+
+
+        function show(n) {
+            var cas = n;
+            var a = document.getElementById('notice');
+            var b = document.getElementById('feedback');
+            var c = document.getElementById('activ');
+            var d = document.getElementById('photo');
+            var e = document.getElementById('car')
+            var f = document.getElementById('testimonials')
+
+            if (cas == 1) {
+                a.style.display = "block";
+                b.style.display = "none";
+                c.style.display = "none";
+                d.style.display = "none";
+                e.style.display = "none";
+                f.style.display = "none";
+            }
+
+            else if (cas == 2) {
+                a.style.display = "none";
+                b.style.display = "block";
+                c.style.display = "none";
+                d.style.display = "none";
+                e.style.display = "none";
+                f.style.display = "none";
+            }
+
+            else if (cas == 3) {
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "block";
+                d.style.display = "none";
+                e.style.display = "none";
+                f.style.display = "none";
+            }
+
+            else if (cas == 4) {
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
+                d.style.display = "block";
+                e.style.display = "none";
+                f.style.display = "none";
+            }
+            else if (cas == 5) {
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
+                d.style.display = "none";
+                e.style.display = "block";
+                f.style.display = "none";
+            }
+            else if (cas == 6) {
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
+                d.style.display = "none";
+                e.style.display = "none";
+                f.style.display = "block";
+            }
+
+        }
+    </script>
+    <style>
+        .alert-success
+        {
+            height: 30px;
+            width: 200px;
+            font-family: 'Raleway',sans-serif;
+            background: lightgreen;
+            color: darkgreen;
+            text-align: center;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .alert-error
+        {
+            height: 30px;
+            width: 250px;
+            text-align: center;
+            font-family: 'Raleway',sans-serif;
+            background: rgba(216, 157, 177, 0.884);
+            color: red;
+            border-radius: 10px;
+            padding: 5px;
+        }
+    </style>
+
+</body>
+</html>

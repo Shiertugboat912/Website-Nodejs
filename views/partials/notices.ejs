@@ -1,0 +1,81 @@
+<form method="POST" action="admin/notices" enctype="multipart/form-data">
+  <h1>Enter New Notice </h1><br>
+  <input type="text" placeholder="Title of Notice" name="title" required><br><br>
+  <textarea name="des" cols="90" rows="10" placeholder="Description" required></textarea><br><br>
+  <label>Notice PDF</label><br>
+  <input type="file" name="noticepdf" accept=".pdf"><br><br>
+  <button class="submit">Upload</button>
+  <br><br>
+  <hr>
+</form>
+
+<br>
+<form method="POST" action="admin/deletenotice">
+  <h1>Delete Notice </h1>
+  <input type="text" placeholder="name of Notice to delete" name="delnotice" required><br><br>
+  <button class="submit">Delete</button>
+</form>
+<br><br>
+<div id="shownot">
+  <table id="gg">
+    <tr>
+      <th>SRno</th>
+      <th>Notice Name</th>
+    </tr>
+    <% if(news.length){ 
+                       for(var i = 0;i < news.length;i++) { %>
+    <tr>
+      <td><%=(i+1)%></td>
+      <td><%=news[i].Title%></td>
+    </tr>
+    <% }
+    }else{ %>
+    <tr>
+      <td colspan="2">No Notices</td>
+    </tr>
+    <% } %>
+  </table>
+</div>
+<br>
+
+<style>
+  form {
+    padding-right: 30px;
+    width: 50%;
+    font-family: 'Archivo Black', sans-serif;
+    height: 400px;
+    font-size: 13px;
+    transform: translate(50px);
+  }
+
+  form input {
+    border: 1px solid grey;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    padding-left: 5px;
+    font-size: 16px;
+    width: 80%;
+  }
+
+  form textarea {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  #gg {
+    border: 2px solid blue;
+    width: 500px;
+    text-align: center;
+  }
+
+  form button {
+    color: white;
+    width: 100px;
+    background-color: dodgerblue;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+  }
+</style>

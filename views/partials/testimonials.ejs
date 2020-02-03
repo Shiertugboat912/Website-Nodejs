@@ -1,0 +1,46 @@
+<form method="POST" action="admin/uptest" enctype="multipart/form-data">
+    <h1>Enter New Testimonial </h1><br>
+    <label>Upload a photo</label>
+    <input type="file" name="personphoto" accept="image/png, image/jpeg" required><br><br>
+    <input type="text" placeholder="Name" name="personname" required><br><br>
+    <input type="email" placeholder="Email" name="personemail" required><br><br>
+    <input type="number" placeholder="Mob" name="personmobile" required><br><br>
+    <input type="text" placeholder="Designation" name="personpost" required><br><br>
+    <textarea name="test" cols="55" rows="10" placeholder="Testimonial" required></textarea><br><br>
+    <button class="submit">Upload</button>
+    <br><br>
+    <hr>
+</form>
+<form method="POST" action="admin/deletetest" enctype="multipart/form-data">
+    <h1>Delete Testimonial </h1><br>
+    <input type="text" placeholder="Name" name="delpersonname" required><br><br>
+    <input type="email" placeholder="Email" name="delpersonemail" required><br><br>
+    <button class="submit">Delete</button>
+</form>
+
+<br><br>
+<div id="showtest">
+    <table id="gg">
+        <tr>
+            <th>SRno</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <% if(test.length){ 
+                       for(var i = 0;i < test.length;i++) { %>
+        <tr>
+            <td><%=(i+1)%></td>
+            <td><%=test[i].P_NAME%></td>
+            <td><%=test[i].P_EMAIL%></td>
+        </tr>
+        <% }
+    }else{ %>
+        <tr>
+            <td colspan="3">No Testimonials</td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+<style>
+ 
+</style>

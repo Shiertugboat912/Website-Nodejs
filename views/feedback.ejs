@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Feedback
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet2.css">
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+    <br><br>
+    <div id="feedback">
+        <form action="/feedback" method="POST">
+            <h1>Feedback</h1>
+            <% if(success.length){%>
+                <div class="alert-success"><%=success%></div>
+            <%}%>
+            <% if(error.length){%>
+                <div class="alert-error"><%=error%></div>
+            <%}%>
+            <input type="text" placeholder="enter your name" name="fname" required><br>
+            <input type="text" placeholder="enter your email" name="email" required><br>
+            <input type="number" placeholder="enter your number" name="number" required><br><br><br>
+            <label>Feedback</label>
+            <textarea name="feed" cols="90" rows="10" required></textarea><br><br>
+            <button id="submit">Submit</button>
+        </form>
+        <img src="images/feed.png">
+    </div><br>
+    <br>
+    <%- include('partials/footer.ejs') %>
+    <script type="text/javascript" src="js/feed.js"></script>
+</body>
+
+</html>

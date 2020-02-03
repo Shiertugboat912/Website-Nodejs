@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Homepage
+  </title>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+  <div id="photos">
+      <%- include('partials/carousel.ejs') %>
+  </div>
+  <div id="about">
+    <form id="vision">
+      <h1>Our Vision</h1>
+      <br>
+      <p>This is the vision of the school</p>
+    </form>
+    <form id="motto">
+      <h1>Our Motto</h1>
+      <br>
+      <p>This s the motto of our school</p>
+    </form>
+  </div>
+  <%- include('partials/homenotice.ejs') %>
+  <br><br>
+  <hr>
+  <br><br>
+  <div id="testimonials">
+    <h1>Reviews About Our School</h1><br>
+    <p>See Testimonials From Our Parents,Teachers and Students</p>
+    <%- include('partials/hometest.ejs') %>
+  </div>
+  <%- include('partials/footer.ejs') %>
+
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

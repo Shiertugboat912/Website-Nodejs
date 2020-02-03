@@ -1,0 +1,74 @@
+<form method="POST" action="admin/carup" enctype="multipart/form-data">
+    <h1>Upoload a Photo </h1><br>
+    <input type="file" name="car" accept="image/png, image/jpeg" required><br><br>
+    <br><br>
+    <button class="submit">Submit</button>
+    <br><br>
+    <hr>
+</form>
+<form method="POST" action="admin/deletecar" enctype="multipart/form-data">
+    <h1>Delete a Photo </h1><br>
+    <input type="text" name="cardel" placeholder="name of the img" required>
+    <br><br>
+    <button class="submit">Submit</button>
+</form>
+
+<% if(car.length){
+   var i = 0;
+   while(i< car.length)
+    {%>
+<a class="carph"><img alt="<%=car[i].CAR_IMAGE%>" style="width:100%;"
+        src="http://localhost:3000/images/car_images/<%=car[i].CAR_IMAGE%>">
+    <label><%=car[i].CAR_IMAGE%></label>
+</a>
+<%i++
+    if(!(i < car.length))
+    break;%>
+<a class="carph"><img alt="<%=car[i].CAR_IMAGE%>" style="width:100%;"
+        src="http://localhost:3000/images/car_images/<%=car[i].CAR_IMAGE%>">
+    <label><%=car[i].CAR_IMAGE%></label>
+</a>
+<%i++
+     }
+}else{
+    %><p>no carousel photos</p>
+<%}%>
+
+
+
+
+<style>
+    form {
+        padding-right: 30px;
+        padding-bottom: 10px;
+        width: 50%;
+        font-family: 'Archivo Black', sans-serif;
+        height: auto;
+        font-size: 13px;
+        transform: translate(50px);
+    }
+
+    form input {
+        border: 1px solid grey;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        padding-left: 5px;
+        font-size: 16px;
+        width: 80%;
+    }
+
+    form button {
+        color: white;
+        width: 100px;
+        background-color: dodgerblue;
+        border: none;
+        height: 40px;
+        border-radius: 20px;
+    }
+    .carph{
+        width:100px;
+    }
+</style>
